@@ -1,0 +1,64 @@
+ 
+                                        Day 13 Task  
+ 
+  1. What are the four access modifiers available in java and what is their significance in terms of class, method, and variable accessibility?
+
+  public: The public access modifier makes a class, method, or variable accessible from any other class in the same package or from any other package.
+          This means that there are no restrictions on access, and the class, method, or variable can be used and accessed from anywhere.
+
+  protected: The protected access modifier restricts access to the class, method, or variable to its own class, any subclass 
+            (even if it's in a different package), and other classes in the same package. This means that only subclasses and classes 
+            in the same package can access protected members.
+
+  default (no modifier): If no access modifier is specified, the default access modifier is applied. This means that the class, 
+                        method, or variable is accessible only within its own package. It is not accessible from outside the package.
+
+  private: The private access modifier restricts access to the class, method, or variable to only the same class where it is declared. 
+          It is the most restrictive access level, ensuring that the member is not accessible from any other class.
+
+
+2. What is the difference between exception and error ?
+  
+    Exception:
+
+   - Exceptions are objects that represent abnormal or unexpected conditions that can be handled by the program.
+   - Exceptions are typically caused by errors in the program logic, input data, or external factors such as file I/O issues or network problems.
+   - Exceptions are meant to be caught and handled by the program to gracefully recover from the exceptional situation.
+   - In Java, exceptions are subclasses of the java.lang.Exception class and are divided into checked exceptions (which must be explicitly handled) and unchecked exceptions (which do not require explicit handling).
+   - Examples of exceptions include NullPointerException, IOException, and ArrayIndexOutOfBoundsException.
+
+Error:
+
+   - Errors, on the other hand, represent severe and typically unrecoverable problems that occur at runtime.
+   - Errors are not meant to be caught and handled by the program. Instead, they indicate serious issues that usually require the program to terminate.
+   - Common examples of errors include OutOfMemoryError (when the JVM runs out of memory) and StackOverflowError (when the call stack becomes too deep).
+   - Errors often result from problems at a lower level, such as hardware failures or issues within the Java Virtual Machine (JVM) itself.
+ 
+
+3. What is the difference between checked exception and unchecked exception?
+
+   Checked Exceptions:
+
+   - Checked exceptions are exceptions that the Java compiler requires you to handle explicitly using try-catch blocks or declare them in the method signature using the throws keyword.
+   - These exceptions are typically related to external factors and conditions that are beyond the programmer's control or require special handling. Examples include file I/O operations, network communication, and database access.
+   - The purpose of checked exceptions is to ensure that the programmer is aware of and takes appropriate action to handle potential exceptions that might occur during the execution of a program.
+   - If you do not handle a checked exception (either by catching it or declaring it in the method signature), the code will not compile.
+    Example of a checked exception:
+
+     import java.io.IOException;
+
+  public class CheckedExceptionExample {
+    public void readFile() throws IOException {
+        // Code that may throw IOException
+    }
+
+    public static void main(String[] args) {
+        CheckedExceptionExample example = new CheckedExceptionExample();
+        try {
+            example.readFile();
+        } catch (IOException e) {
+            // Handle the exception
+        }
+    }
+ }
+ 
